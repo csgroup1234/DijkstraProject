@@ -1,0 +1,11 @@
+ServiceDate,DATE
+Routes,INT
+RouteName,STRING
+CurrentRevenue,FLOAT
+Ridership,INT
+TockenCount,INT
+TicketCount,INT
+PassCount,INT
+BillCount,INT
+UnclassifiedRevenue,FLOAT
+DumpCount,INT

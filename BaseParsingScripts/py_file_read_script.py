@@ -9,7 +9,7 @@ CSV_LIST = [
     'BusFareBoxActivity',
     'BusOnTimePerformance',
     'MasterBusStopList',
-    # 'Logged_Messages_6.00amTo9.00AM_10052017.csv'
+    'Logged_Messages_6.00amTo9.00AM_10052017'
 ]
 
 
@@ -17,7 +17,7 @@ CSV_LIST = [
 for file in CSV_LIST:
     # Usually Encoding is UTF-8, I dont know why, but UTF-8 is throwing 
     # a byte read error for MasterBusStopList, so I am using ISO-8859-1...
-    df = pandas.read_csv(CSV_DIR + file + '.csv', header=0, encoding = "ISO-8859-1")
+    df = pandas.read_csv(CSV_DIR + file + '.csv', header=0, encoding = "ISO-8859-1", quotechar='"', skipinitialspace=True)
     uniq_cols = []
     lens = []
     # For each column in the working file

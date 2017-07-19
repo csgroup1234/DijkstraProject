@@ -1,0 +1,10 @@
+ServiceDateTime,DATE
+Routes,INT
+RouteName,STRING
+EarlyDeparture,INT
+OnTime,INT
+LateArrival,INT
+Missing,INT
+TimePointCount,INT
+OTP,FLOAT
+AverageDwellTime,FLOAT

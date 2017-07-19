@@ -1,0 +1,16 @@
+ServiceDate,DATE
+Routes,INT
+Block,STRING
+RouteDirectionName,STRING
+StopNumber,STRING
+Location,STRING
+Latitude,INT
+Longitude,INT
+ScheduledTime(s),INT
+ScheduledTime(HHMMSS),STRING
+ArrivalTime(s),INT
+ArrivalTime(HHMMSS),STRING
+DepartureTime(s),INT
+DepartureTime(HHMMSS),STR
+Odometer,FLOAT
+VehicleNumber,INT

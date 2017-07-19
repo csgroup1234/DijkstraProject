@@ -1,0 +1,11 @@
+StopNumber,INT
+Location,STRING
+Corner,STRING
+Accessibility,STRING
+Shelter,STRING
+RoutesServed,STRING
+Routes,INT
+Branch,STRING
+Direction,STRING
+Sequence,INT
+CBD,STRING
