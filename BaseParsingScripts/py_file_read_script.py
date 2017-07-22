@@ -9,10 +9,62 @@ CSV_LIST = [
     'BusFareBoxActivity',
     'BusOnTimePerformance',
     'MasterBusStopList',
-    'Logged_Messages_6.00amTo9.00AM_10052017'
+    # 'Logged_Messages_6.00amTo9.00AM_10052017'
 ]
 
+STR_COLS = [
+    'ServiceDate',
+    'Block',
+    'RouteDirectionName',
+    'StopNumber',
+    'Location',
+    'ScheduledTime(HHMMSS)',
+    'ArrivalTime(HHMMSS)',
+    'DepartureTime(HHMMSS)',
+    'RouteName',
+    'RouteName',
+    'Location',
+    'Corner',
+    'Accessibility',
+    'Shelter',
+    'RoutesServed',
+    'Branch',
+    'Direction',
+    'CBD',
+]
 
+INT_COLS = [
+    'StopNumber',
+    'Routes',
+    'Sequence',
+    'Routes',
+    'EarlyDeparture',
+    'OnTime',
+    'LateArrival',
+    'Missing',
+    'TimePointCount',
+    'Routes',
+    'Ridership',
+    'TockenCount',
+    'TicketCount',
+    'PassCount',
+    'BillCount',
+    'DumpCount',
+    'Routes',
+    'ScheduledTime(s)',
+    'ArrivalTime(s)',
+    'DepartureTime(s)',
+    'VehicleNumber',
+]
+
+FLT_COLS = [
+    'AverageDwellTime',
+    'CurrentRevenue',
+    'UnclassifiedRevenue',
+    'Latitude',
+    'Longitude',
+    'Odometer',
+]
 
 for file in CSV_LIST:
     # Usually Encoding is UTF-8, I dont know why, but UTF-8 is throwing 
@@ -36,4 +88,13 @@ for file in CSV_LIST:
                 else:
                     row_str += ','
             f.write(row_str + '\n')
+
+    with open(WD + '/' + file + '_DT.txt', 'w+') as g:
+        for col in df.columns.values:
+            if col in STR_COLS:
+                g.write('{},{},{}\n'.format(col, 'STRING', df[col].astype(str).map(len).max()))
+            elif col in INT_COLS:
+                g.write('{},{},1\n'.format(col,'INT'))
+            elif col in FLT_COLS:
+                g.write('{},{},1\n'.format(col,'FLT'))
     print(file)
