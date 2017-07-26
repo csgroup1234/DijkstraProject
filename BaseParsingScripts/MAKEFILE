@@ -1,0 +1,2 @@
+readInAdherence: readInAdherence.c
+     gcc -c readInAdherence.c -o readInAdherence
